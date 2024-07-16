@@ -1,15 +1,14 @@
-
 from setuptools import setup, find_packages
 
 setup(
     name='shadowmodelcache',
     version='0.1.0',
-    description='ShadowModelCache is a high-performance library designed to create and manage cached copies of models, ensuring fast data retrieval and reduced load on primary data sources. It features automatic cache invalidation, various eviction policies, and supports distributed caching for scalable solutions.',
+    description='High-performance django model cache library.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/your_project',
-    author='Your Name',
-    author_email='your.email@example.com',
+    url='https://github.com/saveychauhan/ShadowModelCache',
+    author='Sawan Chauhan',
+    author_email='sav.ey@live.co.uk',
     license='MIT',
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -20,10 +19,12 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Django'
     ],
     packages=find_packages(),
     install_requires=[
-        # List your package dependencies here
+        'django>=3.2',
+        'django-redis'
     ],
     python_requires='>=3.6',
 )
