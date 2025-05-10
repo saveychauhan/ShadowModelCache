@@ -40,8 +40,10 @@ class ShadowModelCache(models.Model):
 
 
     def delete(self, *args, **kwargs):
+        cache_key = self.cache_key(self.MAIN_ARG)
         super().delete(*args, **kwargs)
-        delete_model_cache(self.cache_key(kwargs[self.MAIN_ARG]))
+        delete_model_cache(cache_key)
+
 
 
     class Meta:
